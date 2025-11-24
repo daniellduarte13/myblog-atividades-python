@@ -1,0 +1,22 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Trabalho Individual - Programação Python"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: atividade1.qmd
+        text: Atividade 1
+      - href: atividade2.qmd
+        text: Atividade 2
+      - href: atividade3.qmd
+        text: Atividade 3
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+

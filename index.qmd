@@ -1,0 +1,28 @@
+---
+title: "Trabalho Individual - Programação Python"
+---
+
+## Sobre este Blog
+
+Este blog apresenta as atividades desenvolvidas na disciplina de Programação Python, focadas em:
+
+- **Análise de dados financeiros** (cotação do dólar)
+- **Visualização de dados geográficos** (monitoramento de ônibus)
+- **Análise estatística** (regressão linear)
+
+Cada atividade foi desenvolvida com comentários explicativos detalhados sobre o processo e a implementação.
+
+## Atividades
+
+### [Atividade 1: Cotação do Dólar por Período](./atividade1.qmd)
+
+Análise da cotação do dólar para um período específico, utilizando a API do Banco Central do Brasil e visualização com gráficos interativos.
+
+### [Atividade 2: Monitoramento de Frota de Ônibus](./atividade2.qmd)
+
+Criação de mapa interativo mostrando paradas e posições em tempo real de uma linha de ônibus da cidade de São Paulo.
+
+### [Atividade 3: Regressão Linear](./atividade3.qmd)
+
+Cálculo de regressão linear entre anos de estudo e salário utilizando fórmula matricial e visualização dos resultados.
+

@@ -1,0 +1,39 @@
+---
+title: "Atividade 2: Monitoramento de Frota de Ônibus (Atualizado)"
+date: today
+---
+
+## Objetivo
+
+Criar um mapa interativo que mostre as paradas de uma linha de ônibus e as posições em tempo real dos veículos dessa linha, utilizando diferentes cores para diferenciar paradas e posições reais.
+
+## Implementação (Atualizada)
+
+- **API Olho Vivo da SPTrans**: Para obter dados de paradas e posições em tempo real
+- **Folium**: Biblioteca Python para criação de mapas interativos
+- **Requests**: Para fazer requisições HTTP à API
+
+### Mudança principal
+
+O script `atividade2_monitoramento_onibus.py` foi atualizado para:
+
+- aceitar o código da linha via argumento de linha de comando `--codigo` (ou pela variável de ambiente `SPTRANS_LINE`),
+- salvar automaticamente o mapa em um arquivo `map_{codigo}.html`, e
+- abrir o HTML gerado no navegador padrão.
+
+### Código principal (resumido)
+
+```python
+# executar o arquivo no mesmo diretório do projeto
+# permite: --codigo 1892 ou usar a variável de ambiente SPTRANS_LINE
+from folium import Map, Marker, Icon
+import requests
+import os
+---
+title: "Atividade 2: Monitoramento de Frota de Ônibus (REMOVIDO)"
+date: 2025-11-23
+---
+
+Este arquivo foi arquivado — as instruções finais foram mescladas em `atividade2.qmd`.
+
+Arquivo mantido como backup local. Pode ser removido manualmente se desejar.
