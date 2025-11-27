@@ -146,11 +146,11 @@ intercepto, inclinacao = calcular_regressao_linear(valores_x, valores_y)
 print(f"Intercepto: {intercepto:.4f}")
 print(f"Inclinação: {inclinacao:.4f}")
 
-# Gera o gráfico e salva em grafico.png
+# Gera o gráfico e salva em docs/grafico.png
 criar_grafico_regressao(valores_x, valores_y, intercepto, inclinacao)
 
 # Exibe o gráfico dentro da página
-display(Image("grafico.png"))
+display(Image("docs/grafico.png"))
 ```
 
 ## Resultado
@@ -172,4 +172,3 @@ A reta de regressão mostra a relação linear estimada entre anos de estudo e s
 - **Fórmula matricial**: Mais eficiente computacionalmente para grandes volumes de dados
 - **Precisão numérica**: NumPy utiliza operações otimizadas para cálculos matriciais
 - **Visualização**: Plotnine oferece uma interface similar ao ggplot2 do R, facilitando a criação de gráficos estatísticos
-

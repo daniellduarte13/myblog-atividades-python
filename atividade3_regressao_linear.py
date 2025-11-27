@@ -40,8 +40,8 @@ def criar_grafico_regressao(
         + theme_bw()  # estética mais limpa
     )
 
-    ggsave(plot, "grafico.png", dpi=300)
-    print("Gráfico salvo como grafico.png")
+    ggsave(plot, "docs/grafico.png", dpi=300)
+    print("Gráfico salvo como docs/grafico.png")
 
 
 if __name__ == "__main__":
