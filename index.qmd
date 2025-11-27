@@ -26,3 +26,8 @@ Criação de mapa interativo mostrando paradas e posições em tempo real de uma
 
 Cálculo de regressão linear entre anos de estudo e salário utilizando fórmula matricial e visualização dos resultados.
 
+
+<div style="margin-top: 40px; padding: 15px; border-top: 1px solid #ccc; text-align: center; font-size: 1.1em; color: #555;">
+✨ <strong>Feito por Daniel Duarte</strong> — Estudante dedicado de Engenharia de Computação<br>
+UNASP - Hortolândia
+</div>

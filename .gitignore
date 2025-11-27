@@ -7,6 +7,17 @@ __pycache__/
 *$py.class
 *.so
 .Python
+questão1.py
+questão2.py
+questão3.py
+questão4.py
+questão5.py
+questão6.py
+questão7.py
+questão8.py
+questão9.py
+questão10.py
+
 
 # Ambientes virtuais
 venv/
@@ -18,8 +29,6 @@ ENV/
 _site/
 
 # Imagens geradas automaticamente
-grafico.png
-*.png
 *.jpg
 
 # IDEs
