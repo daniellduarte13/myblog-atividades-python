@@ -2,7 +2,7 @@
 title: "Atividade 2: Monitoramento de Frota de Ônibus"
 date: 2025-11-23
 execute:
-    enable: true
+  enable: true
 ---
 
 ## Objetivo
@@ -13,20 +13,26 @@ Criar um mapa interativo que mostre as paradas de uma linha de ônibus e as posi
 
 A solução foi desenvolvida utilizando:
 
-- **API Olho Vivo da SPTrans**: Para obter dados de paradas e posições em tempo real
-- **Folium**: Biblioteca Python para criação de mapas interativos
-- **Requests**: Para fazer requisições HTTP à API
+- **API Olho Vivo da SPTrans**
+- **Folium**
+- **Requests**
+- **python-dotenv**
 
 ### Funcionamento
 
-A função `criar_mapa_monitoramento()` realiza os seguintes passos:
+A função `criar_mapa()` realiza:
 
-1. **Autenticação**: Autentica na API Olho Vivo usando um token
-2. **Busca de paradas**: Obtém todas as paradas da linha especificada
-3. **Busca de posições**: Obtém as posições em tempo real dos ônibus da linha
-4. **Criação do mapa**: Gera um mapa com marcadores diferenciados por cor
+1. Autenticação  
+2. Busca de paradas  
+3. Busca de posições  
+4. Criação do mapa  
 
-### Código Principal
+## Mapa da linha 1892
+
+<!-- Renderiza o mapa gerado em map_1892.html -->
+<iframe src="map_1892.html" width="100%" height="600" style="border:none;"></iframe>
+
+### Código Principal (explicativo)
 
 ```python
 import os
@@ -81,72 +87,3 @@ def criar_mapa_monitoramento(codigo_linha):
         ).add_to(mapa)
     
     return mapa
-```
-
-### Diferenciação Visual
-
-- **Pins Azuis**: Representam as paradas fixas da linha
-- **Pins Vermelhos**: Representam as posições em tempo real dos ônibus em movimento
-
-### Segurança
-
-O token da API é armazenado em um arquivo `.env` que não é versionado no Git, garantindo a segurança das credenciais:
-
-```python
-# Arquivo .env (não versionado)
-SPTRANS_TOKEN=seu_token_aqui
-```
-
-## Exemplo de Uso
-
-```python
-# Substitua pelo código da sua linha de ônibus
-codigo_linha = "1892"
-mapa = criar_mapa_monitoramento(codigo_linha)
-mapa.show_in_browser()
-```
-
-## Execução (gerar mapa)
-
-O bloco abaixo cria o mapa para a linha `1892`, salva como `map_1892.html` e mostra o link para visualização.
-
-```{python}
-from atividade2_monitoramento_onibus import criar_mapa
-
-# Código da linha que deseja testar
-codigo = "1892"
-
-# Cria o mapa sem abrir automaticamente o navegador
-m = criar_mapa(codigo, save_html=False)
-outfile = f"map_{codigo}.html"
-m.save(outfile)
-print(f"Mapa gerado: {outfile}")
-
-# Exibir um link simples para abrir manualmente
-print(f"Abra o arquivo gerado no navegador: {outfile}")
-```
-
-## Resultado
-
-O mapa gerado permite visualizar:
-
-- **Todas as paradas** da linha de ônibus escolhida
-- **Posições em tempo real** dos veículos em movimento
-- **Informações detalhadas** ao clicar em cada marcador
-
-## Considerações Técnicas
-
-- **Autenticação**: A API Olho Vivo requer autenticação via token
-- **Sessão HTTP**: Utiliza uma sessão para manter a autenticação entre requisições
-- **Coordenadas**: As coordenadas são fornecidas em formato [latitude, longitude]
-- **Atualização**: As posições são obtidas em tempo real a cada execução do script
-
-## Obtenção do Token
-
-Para obter o token da API Olho Vivo:
-
-1. Acesse: https://www.sptrans.com.br/desenvolvedores/
-2. Crie uma conta de desenvolvedor
-3. Solicite o token de acesso
-4. Salve o token no arquivo `.env` como `SPTRANS_TOKEN=seu_token`
-

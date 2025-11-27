@@ -68,7 +68,7 @@ pip install requests plotly folium python-dotenv numpy pandas plotnine
 Crie um arquivo `.env` na raiz do projeto com:
 
 ```
-SPTRANS_TOKEN=seu_token_aqui
+SPTRANS_TOKEN=290ec966b5f73bb99bfa03cec172ccdcc37237665c8b6a0e2b74725b2d1a8f34
 ```
 
 **IMPORTANTE**: Adicione `.env` ao `.gitignore` para não versionar o token!

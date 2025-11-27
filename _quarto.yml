@@ -20,3 +20,8 @@ format:
     theme: cosmo
     css: styles.css
 
+execute:
+  enabled: true
+  jupyter:
+    kernel: unasp_venv
+

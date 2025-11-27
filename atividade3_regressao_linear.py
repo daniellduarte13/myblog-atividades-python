@@ -1,36 +1,56 @@
 import numpy as np
 import pandas as pd
-from plotnine import ggplot, aes, geom_point, geom_abline
-
-with open("X.txt", 'r') as f:
-    valores_x = np.array([float(linha.strip()) for linha in f.readlines()])
-
-with open("y.txt", 'r') as f:
-    valores_y = np.array([float(linha.strip()) for linha in f.readlines()])
-
-n = len(valores_x)
-if n > 100_000:
-    valores_x = valores_x.astype(np.float32)
-    valores_y = valores_y.astype(np.float32)
-
-X = np.column_stack([np.ones_like(valores_x), valores_x])
-
-beta, *_ = np.linalg.lstsq(X, valores_y, rcond=None)
-
-a = float(beta[0])
-b = float(beta[1])
-
-print(f"Intercepto (a): {a:.4f}")
-print(f"Inclinação (b): {b:.4f}")
-
-df = pd.DataFrame({"x": valores_x, "y": valores_y})
-
-plot = (
-    ggplot(df, aes("x", "y"))
-    + geom_point()
-    + geom_abline(intercept=a, slope=b)
+from plotnine import (
+    ggplot,
+    aes,
+    geom_point,
+    geom_abline,
+    theme_bw,
 )
+from plotnine import ggsave
 
-plot.save("grafico.png")
 
-print(plot)
+def calcular_regressao_linear(valores_x: np.ndarray, valores_y: np.ndarray):
+    n = len(valores_x)
+    X = np.column_stack([np.ones(n), valores_x])
+    y = valores_y.reshape(-1, 1)
+
+    xtx = X.T @ X
+    xtx_inv = np.linalg.inv(xtx)
+    xty = X.T @ y
+    beta = xtx_inv @ xty
+
+    intercepto = float(beta[0, 0])
+    inclinacao = float(beta[1, 0])
+    return intercepto, inclinacao
+
+
+def criar_grafico_regressao(
+    valores_x: np.ndarray,
+    valores_y: np.ndarray,
+    intercepto: float,
+    inclinacao: float,
+):
+    df = pd.DataFrame({"x": valores_x, "y": valores_y})
+
+    plot = (
+        ggplot(df, aes("x", "y"))
+        + geom_point(alpha=0.4, size=1.5)  # pontos mais suaves
+        + geom_abline(intercept=intercepto, slope=inclinacao)  # reta
+        + theme_bw()  # estética mais limpa
+    )
+
+    ggsave(plot, "grafico.png", dpi=300)
+    print("Gráfico salvo como grafico.png")
+
+
+if __name__ == "__main__":
+    valores_x = np.loadtxt("X.txt")
+    valores_y = np.loadtxt("y.txt")
+
+    a, b = calcular_regressao_linear(valores_x, valores_y)
+
+    print(f"Intercepto: {a:.4f}")
+    print(f"Inclinação: {b:.4f}")
+
+    criar_grafico_regressao(valores_x, valores_y, a, b)

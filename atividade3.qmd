@@ -127,23 +127,30 @@ grafico = criar_grafico_regressao(valores_x, valores_y, intercepto, inclinacao)
 
 ## Execução (gerar regressão e gráfico)
 
-O bloco abaixo lê os arquivos `X.txt` e `y.txt`, calcula os coeficientes da regressão usando a fórmula matricial, mostra os valores de intercepto e inclinação e gera `grafico_regressao.png`.
+O bloco abaixo lê os arquivos `X.txt` e `y.txt`, calcula os coeficientes da regressão usando a fórmula matricial, mostra os valores de intercepto e inclinação e gera `grafico.png`.
 
 ```{python}
 import numpy as np
-from atividade3_regressao_linear import calcular_regressao_linear, criar_grafico_regressao
+from atividade3_regressao_linear import (
+    calcular_regressao_linear,
+    criar_grafico_regressao,
+)
+from IPython.display import Image, display
 
 # Carregar dados
-valores_x = np.loadtxt('X.txt')
-valores_y = np.loadtxt('y.txt')
+valores_x = np.loadtxt("X.txt")
+valores_y = np.loadtxt("y.txt")
 
+# Calcula a regressão
 intercepto, inclinacao = calcular_regressao_linear(valores_x, valores_y)
 print(f"Intercepto: {intercepto:.4f}")
 print(f"Inclinação: {inclinacao:.4f}")
 
-# Gera o gráfico (cria grafico.png por padrão dentro da função)
-plot = criar_grafico_regressao(valores_x, valores_y, intercepto, inclinacao)
-plot
+# Gera o gráfico e salva em grafico.png
+criar_grafico_regressao(valores_x, valores_y, intercepto, inclinacao)
+
+# Exibe o gráfico dentro da página
+display(Image("grafico.png"))
 ```
 
 ## Resultado
