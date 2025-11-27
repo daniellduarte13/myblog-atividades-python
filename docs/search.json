@@ -1,0 +1,226 @@
+[
+  {
+    "objectID": "exec_example.html",
+    "href": "exec_example.html",
+    "title": "Execução interativa",
+    "section": "",
+    "text": "Explicação\n  Escreva aqui a explicação da atividade.\n\n\n\n  Execução\n    import numpy as np\n  import pandas as pd\n  from plotnine import ggplot, aes, geom_point, geom_abline\n\n  with open(\"X.txt\", 'r') as f:\n    valores_x = np.array([float(linha.strip()) for linha in f.readlines()])\n\n  with open(\"y.txt\", 'r') as f:\n    valores_y = np.array([float(linha.strip()) for linha in f.readlines()])\n\n  n = len(valores_x)\n  if n &gt; 100_000:\n    valores_x = valores_x.astype(np.float32)\n    valores_y = valores_y.astype(np.float32)\n\n  X = np.column_stack([np.ones_like(valores_x), valores_x])\n\n  beta, *_ = np.linalg.lstsq(X, valores_y, rcond=None)\n\n  a = float(beta[0])\n  b = float(beta[1])\n\n  print(f\"Intercepto (a): {a:.4f}\")\n  print(f\"Inclinação (b): {b:.4f}\")\n\n  df = pd.DataFrame({\"x\": valores_x, \"y\": valores_y})\n\n  plot = (\n    ggplot(df, aes(\"x\", \"y\"))\n    + geom_point()\n    + geom_abline(intercept=a, slope=b)\n  )\n\n  plot.save(\"grafico.png\")\n\n  print(plot)\n  \n  \n    Run\n    Clear\n  \n  Saída\n  Carregando Pyodide..."
+  },
+  {
+    "objectID": "atividade2_updated.html",
+    "href": "atividade2_updated.html",
+    "title": "Atividade 2: Monitoramento de Frota de Ônibus (Atualizado)",
+    "section": "",
+    "text": "Criar um mapa interativo que mostre as paradas de uma linha de ônibus e as posições em tempo real dos veículos dessa linha, utilizando diferentes cores para diferenciar paradas e posições reais."
+  },
+  {
+    "objectID": "atividade2_updated.html#objetivo",
+    "href": "atividade2_updated.html#objetivo",
+    "title": "Atividade 2: Monitoramento de Frota de Ônibus (Atualizado)",
+    "section": "",
+    "text": "Criar um mapa interativo que mostre as paradas de uma linha de ônibus e as posições em tempo real dos veículos dessa linha, utilizando diferentes cores para diferenciar paradas e posições reais."
+  },
+  {
+    "objectID": "atividade2_updated.html#implementação-atualizada",
+    "href": "atividade2_updated.html#implementação-atualizada",
+    "title": "Atividade 2: Monitoramento de Frota de Ônibus (Atualizado)",
+    "section": "Implementação (Atualizada)",
+    "text": "Implementação (Atualizada)\n\nAPI Olho Vivo da SPTrans: Para obter dados de paradas e posições em tempo real\nFolium: Biblioteca Python para criação de mapas interativos\nRequests: Para fazer requisições HTTP à API\n\n\nMudança principal\nO script atividade2_monitoramento_onibus.py foi atualizado para:\n\naceitar o código da linha via argumento de linha de comando --codigo (ou pela variável de ambiente SPTRANS_LINE),\nsalvar automaticamente o mapa em um arquivo map_{codigo}.html, e\nabrir o HTML gerado no navegador padrão.\n\n\n\nCódigo principal (resumido)\n```python # executar o arquivo no mesmo diretório do projeto # permite: –codigo 1892 ou usar a variável de ambiente SPTRANS_LINE from folium import Map, Marker, Icon import requests import os — title: “Atividade 2: Monitoramento de Frota de Ônibus (REMOVIDO)” date: 2025-11-23 —\nEste arquivo foi arquivado — as instruções finais foram mescladas em atividade2.qmd.\nArquivo mantido como backup local. Pode ser removido manualmente se desejar."
+  },
+  {
+    "objectID": "README_BLOG.html",
+    "href": "README_BLOG.html",
+    "title": "Blog Quarto - Trabalho Individual",
+    "section": "",
+    "text": "Este diretório contém a estrutura completa para o blog do trabalho individual.\n\n\n.\n├── _quarto.yml          # Configuração do projeto Quarto\n├── index.qmd            # Página inicial do blog\n├── atividade1.qmd       # Post da Atividade 1\n├── atividade2.qmd       # Post da Atividade 2\n├── atividade3.qmd       # Post da Atividade 3\n├── styles.css           # Estilos personalizados\n├── atividade1_cotacao_dolar.py\n├── atividade2_monitoramento_onibus.py\n└── atividade3_regressao_linear.py\n\n\n\n\n\nBaixe e instale o Quarto em: https://quarto.org/docs/get-started/\n\n\n\nNo terminal, execute:\nquarto render\nIsso gerará os arquivos HTML na pasta docs/.\n\n\n\n\nCrie um repositório no GitHub\nFaça upload dos arquivos (incluindo a pasta docs/)\nVá em Settings &gt; Pages\nConfigure a source como “Deploy from a branch”\nSelecione a branch main e a pasta /docs\nSalve\n\n\n\n\nSempre que fizer alterações:\nquarto render\ngit add .\ngit commit -m \"Atualização do blog\"\ngit push\nO GitHub Pages atualizará automaticamente.\n\n\n\n\nPara executar os scripts Python, instale as dependências:\npip install requests plotly folium python-dotenv numpy pandas plotnine\n\n\n\nCrie um arquivo .env na raiz do projeto com:\nSPTRANS_TOKEN=290ec966b5f73bb99bfa03cec172ccdcc37237665c8b6a0e2b74725b2d1a8f34\nIMPORTANTE: Adicione .env ao .gitignore para não versionar o token!"
+  },
+  {
+    "objectID": "README_BLOG.html#estrutura-de-arquivos",
+    "href": "README_BLOG.html#estrutura-de-arquivos",
+    "title": "Blog Quarto - Trabalho Individual",
+    "section": "",
+    "text": ".\n├── _quarto.yml          # Configuração do projeto Quarto\n├── index.qmd            # Página inicial do blog\n├── atividade1.qmd       # Post da Atividade 1\n├── atividade2.qmd       # Post da Atividade 2\n├── atividade3.qmd       # Post da Atividade 3\n├── styles.css           # Estilos personalizados\n├── atividade1_cotacao_dolar.py\n├── atividade2_monitoramento_onibus.py\n└── atividade3_regressao_linear.py"
+  },
+  {
+    "objectID": "README_BLOG.html#como-publicar-no-github-pages",
+    "href": "README_BLOG.html#como-publicar-no-github-pages",
+    "title": "Blog Quarto - Trabalho Individual",
+    "section": "",
+    "text": "Baixe e instale o Quarto em: https://quarto.org/docs/get-started/\n\n\n\nNo terminal, execute:\nquarto render\nIsso gerará os arquivos HTML na pasta docs/.\n\n\n\n\nCrie um repositório no GitHub\nFaça upload dos arquivos (incluindo a pasta docs/)\nVá em Settings &gt; Pages\nConfigure a source como “Deploy from a branch”\nSelecione a branch main e a pasta /docs\nSalve\n\n\n\n\nSempre que fizer alterações:\nquarto render\ngit add .\ngit commit -m \"Atualização do blog\"\ngit push\nO GitHub Pages atualizará automaticamente."
+  },
+  {
+    "objectID": "README_BLOG.html#dependências-python",
+    "href": "README_BLOG.html#dependências-python",
+    "title": "Blog Quarto - Trabalho Individual",
+    "section": "",
+    "text": "Para executar os scripts Python, instale as dependências:\npip install requests plotly folium python-dotenv numpy pandas plotnine"
+  },
+  {
+    "objectID": "README_BLOG.html#arquivo-.env",
+    "href": "README_BLOG.html#arquivo-.env",
+    "title": "Blog Quarto - Trabalho Individual",
+    "section": "",
+    "text": "Crie um arquivo .env na raiz do projeto com:\nSPTRANS_TOKEN=290ec966b5f73bb99bfa03cec172ccdcc37237665c8b6a0e2b74725b2d1a8f34\nIMPORTANTE: Adicione .env ao .gitignore para não versionar o token!"
+  },
+  {
+    "objectID": "atividade1.html",
+    "href": "atividade1.html",
+    "title": "Atividade 1: Cotação do Dólar por Período",
+    "section": "",
+    "text": "Criar uma rotina que receba como parâmetro uma string no formato “MMYYYY” (mês e ano) e retorne um gráfico de linha com a cotação do dólar para todos os dias úteis daquele mês."
+  },
+  {
+    "objectID": "atividade1.html#objetivo",
+    "href": "atividade1.html#objetivo",
+    "title": "Atividade 1: Cotação do Dólar por Período",
+    "section": "",
+    "text": "Criar uma rotina que receba como parâmetro uma string no formato “MMYYYY” (mês e ano) e retorne um gráfico de linha com a cotação do dólar para todos os dias úteis daquele mês."
+  },
+  {
+    "objectID": "atividade1.html#implementação",
+    "href": "atividade1.html#implementação",
+    "title": "Atividade 1: Cotação do Dólar por Período",
+    "section": "Implementação",
+    "text": "Implementação\nA solução foi desenvolvida em Python utilizando as seguintes bibliotecas:\n\nrequests: Para fazer requisições à API do Banco Central\nplotly: Para criar gráficos interativos\ndatetime e calendar: Para manipulação de datas\n\n\nFuncionamento\nA função cotacao_dolar_periodo() realiza os seguintes passos:\n\nConversão da data: Recebe a string “MMYYYY” e converte para o primeiro e último dia do mês\nConsulta à API: Para cada dia do mês, consulta a API do BCB (Banco Central do Brasil)\nTratamento de feriados: Se não houver cotação disponível (feriado ou fim de semana), busca a cotação do último dia útil anterior\nGeração do gráfico: Cria um gráfico de linha interativo mostrando a evolução da cotação\n\n\n\nCódigo Principal\nimport requests\nimport calendar\nfrom datetime import datetime, timedelta\nimport plotly.graph_objects as go\n\ndef cotacao_dolar_periodo(mmyyyy):\n    # Converte \"MMYYYY\" em datas inicial e final do mês\n    first_date = datetime.strptime(mmyyyy, \"%m%Y\")\n    ultimo_dia = calendar.monthrange(first_date.year, first_date.month)[1]\n    last_date = first_date.replace(day=ultimo_dia)\n    \n    # Listas para armazenar datas e cotações\n    datas = []\n    cotacoes = []\n    \n    # Itera sobre cada dia do mês\n    data_atual = first_date\n    while data_atual &lt;= last_date:\n        data_formatada = data_atual.strftime(\"%m-%d-%Y\")\n        \n        # Consulta a API do BCB\n        url = f\"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial='{data_formatada}'&@dataFinalCotacao='{data_formatada}'&$format=json\"\n        \n        response = requests.get(url)\n        dados = response.json()\n        \n        if dados.get(\"value\") and len(dados[\"value\"]) &gt; 0:\n            cotacao = dados[\"value\"][0][\"cotacaoVenda\"]\n            datas.append(data_atual)\n            cotacoes.append(cotacao)\n        else:\n            # Busca cotação do dia anterior (feriado/fim de semana)\n            cotacao_anterior = buscar_cotacao_dia_anterior(data_atual)\n            if cotacao_anterior:\n                datas.append(data_atual)\n                cotacoes.append(cotacao_anterior)\n        \n        data_atual += timedelta(days=1)\n    \n    # Cria o gráfico\n    fig = go.Figure()\n    fig.add_trace(go.Scatter(\n        x=datas,\n        y=cotacoes,\n        mode='lines+markers',\n        name='Cotação do Dólar',\n        line=dict(color='#1f77b4', width=2)\n    ))\n    \n    fig.update_layout(\n        title=f'Cotação do Dólar - {first_date.strftime(\"%B/%Y\")}',\n        xaxis_title='Data',\n        yaxis_title='Cotação (R$)',\n        hovermode='x unified'\n    )\n    \n    return fig\n\n\nTratamento de Feriados e Finais de Semana\nA função buscar_cotacao_dia_anterior() utiliza recursão para encontrar a última cotação disponível quando não há dados para o dia atual:\ndef buscar_cotacao_dia_anterior(data):\n    dia_anterior = data - timedelta(days=1)\n    data_formatada = dia_anterior.strftime(\"%m-%d-%Y\")\n    \n    url = f\"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial='{data_formatada}'&@dataFinalCotacao='{data_formatada}'&$format=json\"\n    \n    response = requests.get(url)\n    dados = response.json()\n    \n    if dados.get(\"value\") and len(dados[\"value\"]) &gt; 0:\n        return dados[\"value\"][0][\"cotacaoVenda\"]\n    else:\n        # Continua buscando recursivamente\n        return buscar_cotacao_dia_anterior(dia_anterior)"
+  },
+  {
+    "objectID": "atividade1.html#exemplo-de-uso",
+    "href": "atividade1.html#exemplo-de-uso",
+    "title": "Atividade 1: Cotação do Dólar por Período",
+    "section": "Exemplo de Uso",
+    "text": "Exemplo de Uso\n# Exemplo: agosto de 2021\ngrafico = cotacao_dolar_periodo(\"082021\")\ngrafico.show()"
+  },
+  {
+    "objectID": "atividade1.html#execução-gerar-saída",
+    "href": "atividade1.html#execução-gerar-saída",
+    "title": "Atividade 1: Cotação do Dólar por Período",
+    "section": "Execução (gerar saída)",
+    "text": "Execução (gerar saída)\nO bloco abaixo gera o gráfico interativo e salva como dolar_082021.html.\n\nfrom atividade1_cotacao_dolar import cotacao_dolar_periodo\n\n# Substitua pelo mês/ano desejado (MMYYYY)\nmes = \"082021\"\nfig = cotacao_dolar_periodo(mes)\noutfile = f\"dolar_{mes}.html\"\n# salva arquivo HTML interativo\nfig.write_html(outfile)\nprint(f\"Arquivo gerado: {outfile}\")\n\n# Retorna a figura para que o Quarto a incorpore na página (interactive)\nfig\n\n                            \n                                            \n\n\nArquivo gerado: dolar_082021.html"
+  },
+  {
+    "objectID": "atividade1.html#resultado",
+    "href": "atividade1.html#resultado",
+    "title": "Atividade 1: Cotação do Dólar por Período",
+    "section": "Resultado",
+    "text": "Resultado\nO gráfico gerado mostra a evolução da cotação do dólar ao longo do mês, permitindo visualizar tendências e variações diárias. O gráfico é interativo, permitindo zoom, pan e visualização de valores ao passar o mouse."
+  },
+  {
+    "objectID": "atividade1.html#considerações-técnicas",
+    "href": "atividade1.html#considerações-técnicas",
+    "title": "Atividade 1: Cotação do Dólar por Período",
+    "section": "Considerações Técnicas",
+    "text": "Considerações Técnicas\n\nAPI utilizada: API PTAX do Banco Central do Brasil\nFormato de data: A API requer datas no formato “MM-DD-YYYY”\nTratamento de erros: Implementado tratamento para casos onde não há cotação disponível\nPerformance: A função itera sobre todos os dias do mês, fazendo uma requisição por dia"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Trabalho Individual - Programação Python",
+    "section": "",
+    "text": "Este blog apresenta as atividades desenvolvidas na disciplina de Programação Python, focadas em:\n\nAnálise de dados financeiros (cotação do dólar)\nVisualização de dados geográficos (monitoramento de ônibus)\nAnálise estatística (regressão linear)\n\nCada atividade foi desenvolvida com comentários explicativos detalhados sobre o processo e a implementação."
+  },
+  {
+    "objectID": "index.html#sobre-este-blog",
+    "href": "index.html#sobre-este-blog",
+    "title": "Trabalho Individual - Programação Python",
+    "section": "",
+    "text": "Este blog apresenta as atividades desenvolvidas na disciplina de Programação Python, focadas em:\n\nAnálise de dados financeiros (cotação do dólar)\nVisualização de dados geográficos (monitoramento de ônibus)\nAnálise estatística (regressão linear)\n\nCada atividade foi desenvolvida com comentários explicativos detalhados sobre o processo e a implementação."
+  },
+  {
+    "objectID": "index.html#atividades",
+    "href": "index.html#atividades",
+    "title": "Trabalho Individual - Programação Python",
+    "section": "Atividades",
+    "text": "Atividades\n\nAtividade 1: Cotação do Dólar por Período\nAnálise da cotação do dólar para um período específico, utilizando a API do Banco Central do Brasil e visualização com gráficos interativos.\n\n\nAtividade 2: Monitoramento de Frota de Ônibus\nCriação de mapa interativo mostrando paradas e posições em tempo real de uma linha de ônibus da cidade de São Paulo.\n\n\nAtividade 3: Regressão Linear\nCálculo de regressão linear entre anos de estudo e salário utilizando fórmula matricial e visualização dos resultados."
+  },
+  {
+    "objectID": "atividade3.html",
+    "href": "atividade3.html",
+    "title": "Atividade 3: Regressão Linear",
+    "section": "",
+    "text": "Calcular uma regressão linear entre anos de estudo (X) e salário (y) utilizando a fórmula matricial, e gerar um gráfico com os pontos de dados e a reta estimada."
+  },
+  {
+    "objectID": "atividade3.html#objetivo",
+    "href": "atividade3.html#objetivo",
+    "title": "Atividade 3: Regressão Linear",
+    "section": "",
+    "text": "Calcular uma regressão linear entre anos de estudo (X) e salário (y) utilizando a fórmula matricial, e gerar um gráfico com os pontos de dados e a reta estimada."
+  },
+  {
+    "objectID": "atividade3.html#implementação",
+    "href": "atividade3.html#implementação",
+    "title": "Atividade 3: Regressão Linear",
+    "section": "Implementação",
+    "text": "Implementação\nA solução foi desenvolvida utilizando:\n\nNumPy: Para cálculos matriciais\nPandas: Para manipulação de dados\nPlotnine: Para criação de gráficos estatísticos (gramática de gráficos similar ao ggplot2 do R)\n\n\nFórmula Matricial\nA regressão linear é calculada usando a fórmula matricial:\nβ = (X’X)^(-1)X’y\nOnde: - X é a matriz de design (com coluna de 1s para o intercepto) - y é o vetor de respostas - β contém [intercepto, inclinação]\n\n\nFuncionamento\nO código realiza os seguintes passos:\n\nLeitura dos dados: Lê os valores de X e y dos arquivos X.txt e y.txt\nConstrução da matriz de design: Cria a matriz X com coluna de 1s e os valores de X\nCálculo dos coeficientes: Aplica a fórmula matricial para obter intercepto e inclinação\nGeração do gráfico: Cria um gráfico com pontos e reta de regressão\n\n\n\nCódigo Principal\nimport numpy as np\nimport pandas as pd\nfrom plotnine import ggplot, aes, geom_point, geom_abline, ggsave\n\ndef calcular_regressao_linear(valores_x, valores_y):\n    n = len(valores_x)\n    \n    # Cria a matriz de design X\n    # Primeira coluna: 1s (para o intercepto)\n    # Segunda coluna: valores de x (para a inclinação)\n    X = np.column_stack([np.ones(n), valores_x])\n    \n    # Converte y em vetor coluna\n    y = valores_y.reshape(-1, 1)\n    \n    # Calcula X'X (matriz de covariância)\n    XtX = np.dot(X.T, X)\n    \n    # Calcula (X'X)^(-1) (inversa)\n    XtX_inv = np.linalg.inv(XtX)\n    \n    # Calcula X'y\n    Xty = np.dot(X.T, y)\n    \n    # Calcula β = (X'X)^(-1)X'y\n    beta = np.dot(XtX_inv, Xty)\n    \n    # Extrai intercepto (β₀) e inclinação (β₁)\n    intercepto = beta[0][0]\n    inclinacao = beta[1][0]\n    \n    return intercepto, inclinacao\n\ndef criar_grafico_regressao(valores_x, valores_y, intercepto, inclinacao):\n    # Cria um DataFrame\n    df = pd.DataFrame({\"x\": valores_x, \"y\": valores_y})\n    \n    # Cria o gráfico usando plotnine\n    plot = (\n        ggplot(df, aes(\"x\", \"y\"))\n        + geom_point(color=\"blue\", alpha=0.6)  # Pontos dos dados\n        + geom_abline(intercept=intercepto, slope=inclinacao, color=\"red\")  # Reta de regressão\n    )\n    \n    # Salva o gráfico\n    ggsave(plot, \"grafico.png\", dpi=300)\n    \n    return plot\n\n\nExplicação da Fórmula Matricial\n\nMatriz de Design (X):\nX = [1  x₁]\n    [1  x₂]\n    [1  x₃]\n    [...]\nA primeira coluna de 1s permite calcular o intercepto.\nCálculo de X’X: Multiplica a transposta de X por X, resultando em uma matriz 2x2.\nInversa de X’X: Calcula a matriz inversa usando np.linalg.inv().\nCálculo de X’y: Multiplica a transposta de X por y.\nCoeficientes: Multiplica (X’X)^(-1) por X’y para obter os coeficientes."
+  },
+  {
+    "objectID": "atividade3.html#exemplo-de-uso",
+    "href": "atividade3.html#exemplo-de-uso",
+    "title": "Atividade 3: Regressão Linear",
+    "section": "Exemplo de Uso",
+    "text": "Exemplo de Uso\n# Lê os dados\nvalores_x, valores_y = ler_dados(\"X.txt\", \"y.txt\")\n\n# Calcula a regressão\nintercepto, inclinacao = calcular_regressao_linear(valores_x, valores_y)\n\nprint(f\"Intercepto: {intercepto:.4f}\")\nprint(f\"Inclinação: {inclinacao:.4f}\")\n\n# Cria o gráfico\ngrafico = criar_grafico_regressao(valores_x, valores_y, intercepto, inclinacao)"
+  },
+  {
+    "objectID": "atividade3.html#execução-gerar-regressão-e-gráfico",
+    "href": "atividade3.html#execução-gerar-regressão-e-gráfico",
+    "title": "Atividade 3: Regressão Linear",
+    "section": "Execução (gerar regressão e gráfico)",
+    "text": "Execução (gerar regressão e gráfico)\nO bloco abaixo lê os arquivos X.txt e y.txt, calcula os coeficientes da regressão usando a fórmula matricial, mostra os valores de intercepto e inclinação e gera grafico.png.\n\nimport numpy as np\nfrom atividade3_regressao_linear import (\n    calcular_regressao_linear,\n    criar_grafico_regressao,\n)\nfrom IPython.display import Image, display\n\n# Carregar dados\nvalores_x = np.loadtxt(\"X.txt\")\nvalores_y = np.loadtxt(\"y.txt\")\n\n# Calcula a regressão\nintercepto, inclinacao = calcular_regressao_linear(valores_x, valores_y)\nprint(f\"Intercepto: {intercepto:.4f}\")\nprint(f\"Inclinação: {inclinacao:.4f}\")\n\n# Gera o gráfico e salva em grafico.png\ncriar_grafico_regressao(valores_x, valores_y, intercepto, inclinacao)\n\n# Exibe o gráfico dentro da página\ndisplay(Image(\"grafico.png\"))\n\nIntercepto: 373.9345\nInclinação: 991.6278\n\n\nF:\\UNASP\\programacao_python\\.venv\\Lib\\site-packages\\plotnine\\ggplot.py:623: PlotnineWarning: Saving 7.0 x 5.0 in image.\nF:\\UNASP\\programacao_python\\.venv\\Lib\\site-packages\\plotnine\\ggplot.py:624: PlotnineWarning: Filename: grafico.png\n\n\nGráfico salvo como grafico.png"
+  },
+  {
+    "objectID": "atividade3.html#resultado",
+    "href": "atividade3.html#resultado",
+    "title": "Atividade 3: Regressão Linear",
+    "section": "Resultado",
+    "text": "Resultado\nO gráfico gerado mostra:\n\nPontos azuis: Representam os dados observados (anos de estudo vs. salário)\nReta vermelha: Representa a reta de regressão estimada (y = a + bx)\n\nA reta de regressão mostra a relação linear estimada entre anos de estudo e salário, permitindo fazer previsões para novos valores."
+  },
+  {
+    "objectID": "atividade3.html#interpretação-dos-coeficientes",
+    "href": "atividade3.html#interpretação-dos-coeficientes",
+    "title": "Atividade 3: Regressão Linear",
+    "section": "Interpretação dos Coeficientes",
+    "text": "Interpretação dos Coeficientes\n\nIntercepto (a): Valor esperado de y quando x = 0 (salário base)\nInclinação (b): Mudança esperada em y para cada unidade de aumento em x (aumento de salário por ano de estudo adicional)"
+  },
+  {
+    "objectID": "atividade3.html#considerações-técnicas",
+    "href": "atividade3.html#considerações-técnicas",
+    "title": "Atividade 3: Regressão Linear",
+    "section": "Considerações Técnicas",
+    "text": "Considerações Técnicas\n\nFórmula matricial: Mais eficiente computacionalmente para grandes volumes de dados\nPrecisão numérica: NumPy utiliza operações otimizadas para cálculos matriciais\nVisualização: Plotnine oferece uma interface similar ao ggplot2 do R, facilitando a criação de gráficos estatísticos"
+  },
+  {
+    "objectID": "atividade2.html",
+    "href": "atividade2.html",
+    "title": "Atividade 2: Monitoramento de Frota de Ônibus",
+    "section": "",
+    "text": "Criar um mapa interativo que mostre as paradas de uma linha de ônibus e as posições em tempo real dos veículos dessa linha, utilizando diferentes cores para diferenciar paradas e posições reais."
+  },
+  {
+    "objectID": "atividade2.html#objetivo",
+    "href": "atividade2.html#objetivo",
+    "title": "Atividade 2: Monitoramento de Frota de Ônibus",
+    "section": "",
+    "text": "Criar um mapa interativo que mostre as paradas de uma linha de ônibus e as posições em tempo real dos veículos dessa linha, utilizando diferentes cores para diferenciar paradas e posições reais."
+  },
+  {
+    "objectID": "atividade2.html#implementação",
+    "href": "atividade2.html#implementação",
+    "title": "Atividade 2: Monitoramento de Frota de Ônibus",
+    "section": "Implementação",
+    "text": "Implementação\nA solução foi desenvolvida utilizando:\n\nAPI Olho Vivo da SPTrans\nFolium\nRequests\npython-dotenv\n\n\nFuncionamento\nA função criar_mapa() realiza:\n\nAutenticação\n\nBusca de paradas\n\nBusca de posições\n\nCriação do mapa"
+  },
+  {
+    "objectID": "atividade2.html#mapa-da-linha-1892",
+    "href": "atividade2.html#mapa-da-linha-1892",
+    "title": "Atividade 2: Monitoramento de Frota de Ônibus",
+    "section": "Mapa da linha 1892",
+    "text": "Mapa da linha 1892\n\n\n\n\nCódigo Principal (explicativo)\n```python import os import requests from folium import Map, Marker, Icon from dotenv import load_dotenv\ndef criar_mapa_monitoramento(codigo_linha): # Carrega o token do arquivo .env (segurança) load_dotenv(“.env”) s = requests.Session()\n# Autentica na API\ntoken = os.getenv('SPTRANS_TOKEN')\nres_auth = s.post(\n    f\"http://api.olhovivo.sptrans.com.br/v2.1/Login/Autenticar?token={token}\"\n)\n\n# Busca paradas da linha\nres_paradas = s.get(\n    f\"http://api.olhovivo.sptrans.com.br/v2.1/Parada/BuscarParadasPorLinha?codigoLinha={codigo_linha}\"\n)\nparadas = res_paradas.json()\n\n# Busca posições em tempo real\nres_posicoes = s.get(\n    f\"http://api.olhovivo.sptrans.com.br/v2.1/Posicao/Linha?codigoLinha={codigo_linha}\"\n)\nposicoes = res_posicoes.json()\nveiculos = posicoes.get(\"vs\", []) if posicoes else []\n\n# Cria o mapa centrado na primeira parada\nmapa = Map(\n    location=[paradas[0][\"py\"], paradas[0][\"px\"]],\n    zoom_start=14\n)\n\n# Adiciona marcadores azuis para paradas\nfor parada in paradas:\n    Marker(\n        location=[parada[\"py\"], parada[\"px\"]],\n        popup=f\"Parada: {parada.get('np', 'Sem nome')}\",\n        icon=Icon(color='blue', icon='info-sign', prefix='glyphicon')\n    ).add_to(mapa)\n\n# Adiciona marcadores vermelhos para posições em tempo real\nfor veiculo in veiculos:\n    Marker(\n        location=[veiculo[\"py\"], veiculo[\"px\"]],\n        popup=f\"Ônibus: {veiculo.get('p', 'N/A')}\",\n        icon=Icon(color='red', icon='bus', prefix='fa')\n    ).add_to(mapa)\n\nreturn mapa"
+  },
+  {
+    "objectID": "BLOG_SETUP.html",
+    "href": "BLOG_SETUP.html",
+    "title": "Publicar o blog no GitHub Pages",
+    "section": "",
+    "text": "Publicar o blog no GitHub Pages\nEste guia mostra passos mínimos para publicar seu blog Quarto no GitHub Pages usando o workflow fornecido em .github/workflows/quarto-render.yml.\n\nCrie um repositório no GitHub\n\n\nNo GitHub, clique em New repository e escolha um nome (ex.: trabalho-python).\n\n\nConecte o repositório local ao remoto e faça push Abra PowerShell na raiz do projeto e execute:\n\n# se ainda não for um repositório git\ngit init\ngit add .\ngit commit -m \"Prepare blog for GitHub Pages\"\n\ngit branch -M main\n# substitua pelo URL do repositório que você criou\ngit remote add origin https://github.com/&lt;SEU_USUARIO&gt;/&lt;NOME_DO_REPO&gt;.git\ngit push -u origin main\n\nVerifique o workflow\n\n\nO arquivo .github/workflows/quarto-render.yml renderiza o site e publica a pasta docs/ no branch gh-pages sempre que você der push para main.\n\n\nAguardar o GitHub Actions\n\n\nNo GitHub vá em Actions e verifique o job Render and deploy Quarto site. Aguarde ele rodar com sucesso.\n\n\nVerificar URL pública\n\n\nDepois que o workflow finalizar, o site ficará disponível em: https://&lt;SEU_USUARIO&gt;.github.io/&lt;NOME_DO_REPO&gt;/\n\n\nAjustes finais (opcional)\n\n\nSe quiser usar um domínio customizado, adicione CNAME ao branch gh-pages ou nas configurações do repositório.\nSe preferir que o site seja servido a partir da pasta docs no branch main em vez de gh-pages, altere as configurações do workflow (deploy) e nas Settings &gt; Pages escolha main / /docs.\n\nSe quiser, eu crio o commit inicial .github/... para você já ter o arquivo pronto (já criei localmente neste workspace). O próximo passo é você criar o repositório no GitHub e dar push; depois eu posso ajudar a verificar o Actions e o link público."
+  }
+]

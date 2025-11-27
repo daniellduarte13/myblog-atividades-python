@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_2dd6f9b34b388be50a8a25c495499e06 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_2dd6f9b34b388be50a8a25c495499e06" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_2dd6f9b34b388be50a8a25c495499e06 = L.map(
+                "map_2dd6f9b34b388be50a8a25c495499e06",
+                {
+                    center: [-23.576878, -46.707716],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 14,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_75574f0b40127724e600ab5f75506a8d = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_75574f0b40127724e600ab5f75506a8d.addTo(map_2dd6f9b34b388be50a8a25c495499e06);
+        
+    
+            var marker_cce631c49716c39072518c7c6f96a7a6 = L.marker(
+                [-23.576878, -46.707716],
+                {
+}
+            ).addTo(map_2dd6f9b34b388be50a8a25c495499e06);
+        
+    
+            var icon_f6ddac56d1c8dbb7621c4d956cf5d2d0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_58b0d20e3c7c8d80640928c1dbd3bb4c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3a95f5daed31697214c74af4b3d4b956 = $(`<div id="html_3a95f5daed31697214c74af4b3d4b956" style="width: 100.0%; height: 100.0%;">DRAUSIO B/C</div>`)[0];
+                popup_58b0d20e3c7c8d80640928c1dbd3bb4c.setContent(html_3a95f5daed31697214c74af4b3d4b956);
+            
+        
+
+        marker_cce631c49716c39072518c7c6f96a7a6.bindPopup(popup_58b0d20e3c7c8d80640928c1dbd3bb4c)
+        ;
+
+        
+    
+    
+                marker_cce631c49716c39072518c7c6f96a7a6.setIcon(icon_f6ddac56d1c8dbb7621c4d956cf5d2d0);
+            
+    
+            var marker_17c253e6e5bda7028d9152fc2ca2eadf = L.marker(
+                [-23.584837, -46.71869],
+                {
+}
+            ).addTo(map_2dd6f9b34b388be50a8a25c495499e06);
+        
+    
+            var icon_4266c5c45f15a904203dbcfada201b91 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_031fc907f33ecb3856cd1f8742dc477a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_507a44422527a067034774f9a8b9c2fa = $(`<div id="html_507a44422527a067034774f9a8b9c2fa" style="width: 100.0%; height: 100.0%;">TRES IRMAOS B/C</div>`)[0];
+                popup_031fc907f33ecb3856cd1f8742dc477a.setContent(html_507a44422527a067034774f9a8b9c2fa);
+            
+        
+
+        marker_17c253e6e5bda7028d9152fc2ca2eadf.bindPopup(popup_031fc907f33ecb3856cd1f8742dc477a)
+        ;
+
+        
+    
+    
+                marker_17c253e6e5bda7028d9152fc2ca2eadf.setIcon(icon_4266c5c45f15a904203dbcfada201b91);
+            
+    
+            var marker_348bb0751a827563429c2a814e702ca1 = L.marker(
+                [-23.560639, -46.672095],
+                {
+}
+            ).addTo(map_2dd6f9b34b388be50a8a25c495499e06);
+        
+    
+            var icon_15f1a3554221c448739372ffc554fadf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_40844164e69c5727c7e373d652cab826 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_99dec8771555955315d0537aeddc3834 = $(`<div id="html_99dec8771555955315d0537aeddc3834" style="width: 100.0%; height: 100.0%;">OSCAR FREIRE B/C</div>`)[0];
+                popup_40844164e69c5727c7e373d652cab826.setContent(html_99dec8771555955315d0537aeddc3834);
+            
+        
+
+        marker_348bb0751a827563429c2a814e702ca1.bindPopup(popup_40844164e69c5727c7e373d652cab826)
+        ;
+
+        
+    
+    
+                marker_348bb0751a827563429c2a814e702ca1.setIcon(icon_15f1a3554221c448739372ffc554fadf);
+            
+    
+            var marker_3f9d7cd1864abfd4b9e243ca5f6873eb = L.marker(
+                [-23.558088, -46.667585],
+                {
+}
+            ).addTo(map_2dd6f9b34b388be50a8a25c495499e06);
+        
+    
+            var icon_2aa41cbcbe914b6fcab371983dcbdf6a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6c4ddaea07d1eef28a40975c4a0dcdc1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_36c4022a8c4824cedb8e2d1df70a62f1 = $(`<div id="html_36c4022a8c4824cedb8e2d1df70a62f1" style="width: 100.0%; height: 100.0%;">CLINICAS B/C</div>`)[0];
+                popup_6c4ddaea07d1eef28a40975c4a0dcdc1.setContent(html_36c4022a8c4824cedb8e2d1df70a62f1);
+            
+        
+
+        marker_3f9d7cd1864abfd4b9e243ca5f6873eb.bindPopup(popup_6c4ddaea07d1eef28a40975c4a0dcdc1)
+        ;
+
+        
+    
+    
+                marker_3f9d7cd1864abfd4b9e243ca5f6873eb.setIcon(icon_2aa41cbcbe914b6fcab371983dcbdf6a);
+            
+    
+            var marker_38aa59c07192767be07772a8fc410745 = L.marker(
+                [-23.572945, -46.705052],
+                {
+}
+            ).addTo(map_2dd6f9b34b388be50a8a25c495499e06);
+        
+    
+            var icon_a3978de99ac9edd6b38f461f468ce1f1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_21b69a656a107bcb7905c72657784980 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0aface4fc924a122c235864695e732e3 = $(`<div id="html_0aface4fc924a122c235864695e732e3" style="width: 100.0%; height: 100.0%;">PARADA VITAL BRASIL B/C</div>`)[0];
+                popup_21b69a656a107bcb7905c72657784980.setContent(html_0aface4fc924a122c235864695e732e3);
+            
+        
+
+        marker_38aa59c07192767be07772a8fc410745.bindPopup(popup_21b69a656a107bcb7905c72657784980)
+        ;
+
+        
+    
+    
+                marker_38aa59c07192767be07772a8fc410745.setIcon(icon_a3978de99ac9edd6b38f461f468ce1f1);
+            
+    
+            var marker_db788ced721ed99cf33537b48af9ada5 = L.marker(
+                [-23.58095, -46.711425],
+                {
+}
+            ).addTo(map_2dd6f9b34b388be50a8a25c495499e06);
+        
+    
+            var icon_b827e8fba2838ccd135f2cf47f88caa6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_16b8c813ccf2e0c2c1d744bf4c22bec1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_046a0cc259b6e2c7982fdf46aa8b2a68 = $(`<div id="html_046a0cc259b6e2c7982fdf46aa8b2a68" style="width: 100.0%; height: 100.0%;">ROQUETE PINTO B/C</div>`)[0];
+                popup_16b8c813ccf2e0c2c1d744bf4c22bec1.setContent(html_046a0cc259b6e2c7982fdf46aa8b2a68);
+            
+        
+
+        marker_db788ced721ed99cf33537b48af9ada5.bindPopup(popup_16b8c813ccf2e0c2c1d744bf4c22bec1)
+        ;
+
+        
+    
+    
+                marker_db788ced721ed99cf33537b48af9ada5.setIcon(icon_b827e8fba2838ccd135f2cf47f88caa6);
+            
+    
+            var marker_bde27ebfb9e2a8cf86c55a171ebd23b5 = L.marker(
+                [-23.582836, -46.713849],
+                {
+}
+            ).addTo(map_2dd6f9b34b388be50a8a25c495499e06);
+        
+    
+            var icon_813a02dfa9a66e527fb62d648ace750f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_25ecc9b5c34b80746ad4ee5bce1ff475 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d5c5001dd319955303e16d0ac7a5099c = $(`<div id="html_d5c5001dd319955303e16d0ac7a5099c" style="width: 100.0%; height: 100.0%;">FUND CARLOS CHAGAS B/C</div>`)[0];
+                popup_25ecc9b5c34b80746ad4ee5bce1ff475.setContent(html_d5c5001dd319955303e16d0ac7a5099c);
+            
+        
+
+        marker_bde27ebfb9e2a8cf86c55a171ebd23b5.bindPopup(popup_25ecc9b5c34b80746ad4ee5bce1ff475)
+        ;
+
+        
+    
+    
+                marker_bde27ebfb9e2a8cf86c55a171ebd23b5.setIcon(icon_813a02dfa9a66e527fb62d648ace750f);
+            
+    
+            var marker_8310478d5b98c332bf1be3bdb17dec47 = L.marker(
+                [-23.564642, -46.678602],
+                {
+}
+            ).addTo(map_2dd6f9b34b388be50a8a25c495499e06);
+        
+    
+            var icon_3bd3f284dd929e456fd32df81dc6f40a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2251513b27e02e94bb9a94286b0d26ad = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_175e46e7284ec94d3956388ea258857b = $(`<div id="html_175e46e7284ec94d3956388ea258857b" style="width: 100.0%; height: 100.0%;">BRASIL B/C</div>`)[0];
+                popup_2251513b27e02e94bb9a94286b0d26ad.setContent(html_175e46e7284ec94d3956388ea258857b);
+            
+        
+
+        marker_8310478d5b98c332bf1be3bdb17dec47.bindPopup(popup_2251513b27e02e94bb9a94286b0d26ad)
+        ;
+
+        
+    
+    
+                marker_8310478d5b98c332bf1be3bdb17dec47.setIcon(icon_3bd3f284dd929e456fd32df81dc6f40a);
+            
+    
+            var marker_5e514c59699c06a367925b3aabf4f386 = L.marker(
+                [-23.567915, -46.684758],
+                {
+}
+            ).addTo(map_2dd6f9b34b388be50a8a25c495499e06);
+        
+    
+            var icon_364d5a93eab287028f0bdf4630d03aff = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d816aff67b65f6152e94c88f91acefd1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8c09e2b42384d39fae47ce5c70ce86fd = $(`<div id="html_8c09e2b42384d39fae47ce5c70ce86fd" style="width: 100.0%; height: 100.0%;">CAP. ANTONIO ROSA B/C</div>`)[0];
+                popup_d816aff67b65f6152e94c88f91acefd1.setContent(html_8c09e2b42384d39fae47ce5c70ce86fd);
+            
+        
+
+        marker_5e514c59699c06a367925b3aabf4f386.bindPopup(popup_d816aff67b65f6152e94c88f91acefd1)
+        ;
+
+        
+    
+    
+                marker_5e514c59699c06a367925b3aabf4f386.setIcon(icon_364d5a93eab287028f0bdf4630d03aff);
+            
+    
+            var marker_f3591967106895256141a6f06f80ba48 = L.marker(
+                [-23.571709, -46.696577],
+                {
+}
+            ).addTo(map_2dd6f9b34b388be50a8a25c495499e06);
+        
+    
+            var icon_33300afe62a5dc3fdf99b1ce0c909415 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d673bc80186e598f9356bd6e528ef2a9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_41143f4cc174c0b4c856426cac8b6e3f = $(`<div id="html_41143f4cc174c0b4c856426cac8b6e3f" style="width: 100.0%; height: 100.0%;">PARADA ELDORADO B/C</div>`)[0];
+                popup_d673bc80186e598f9356bd6e528ef2a9.setContent(html_41143f4cc174c0b4c856426cac8b6e3f);
+            
+        
+
+        marker_f3591967106895256141a6f06f80ba48.bindPopup(popup_d673bc80186e598f9356bd6e528ef2a9)
+        ;
+
+        
+    
+    
+                marker_f3591967106895256141a6f06f80ba48.setIcon(icon_33300afe62a5dc3fdf99b1ce0c909415);
+            
+    
+            var marker_7dd283d8b4c158961c563ce2e239d9bd = L.marker(
+                [-23.571182, -46.691378],
+                {
+}
+            ).addTo(map_2dd6f9b34b388be50a8a25c495499e06);
+        
+    
+            var icon_8ee2586bd005c5ec7e2489b0a0599c52 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_86ce8feeaf10ff642e0bb4a59bc2dcc5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e43da54e0eb608b181c65e23366344fd = $(`<div id="html_e43da54e0eb608b181c65e23366344fd" style="width: 100.0%; height: 100.0%;">PARADA 2 - FARIA LIMA B/C</div>`)[0];
+                popup_86ce8feeaf10ff642e0bb4a59bc2dcc5.setContent(html_e43da54e0eb608b181c65e23366344fd);
+            
+        
+
+        marker_7dd283d8b4c158961c563ce2e239d9bd.bindPopup(popup_86ce8feeaf10ff642e0bb4a59bc2dcc5)
+        ;
+
+        
+    
+    
+                marker_7dd283d8b4c158961c563ce2e239d9bd.setIcon(icon_8ee2586bd005c5ec7e2489b0a0599c52);
+            
+    
+            var marker_c8603f81709dea477a7c4c57797a52cf = L.marker(
+                [-23.586951, -46.725216],
+                {
+}
+            ).addTo(map_2dd6f9b34b388be50a8a25c495499e06);
+        
+    
+            var icon_54d407a8a3834c71fb2341a04a8d9778 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d3d4a350488353dcf15007a0c10cf86a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f11c853ef275b206181159d3ea15880d = $(`<div id="html_f11c853ef275b206181159d3ea15880d" style="width: 100.0%; height: 100.0%;">JORGE JOÃO SAAD B/C</div>`)[0];
+                popup_d3d4a350488353dcf15007a0c10cf86a.setContent(html_f11c853ef275b206181159d3ea15880d);
+            
+        
+
+        marker_c8603f81709dea477a7c4c57797a52cf.bindPopup(popup_d3d4a350488353dcf15007a0c10cf86a)
+        ;
+
+        
+    
+    
+                marker_c8603f81709dea477a7c4c57797a52cf.setIcon(icon_54d407a8a3834c71fb2341a04a8d9778);
+            
+    
+            var marker_6a517f345435d97329a377e38731ddb9 = L.marker(
+                [-23.588191, -46.727332],
+                {
+}
+            ).addTo(map_2dd6f9b34b388be50a8a25c495499e06);
+        
+    
+            var icon_c28e9667fe0d1962c2c7dec7656abee8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_66a1f510b507b065ec3c60f56d19b78e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fa3d95c373922e795fec6d0de76fce2d = $(`<div id="html_fa3d95c373922e795fec6d0de76fce2d" style="width: 100.0%; height: 100.0%;">EDEN B/C</div>`)[0];
+                popup_66a1f510b507b065ec3c60f56d19b78e.setContent(html_fa3d95c373922e795fec6d0de76fce2d);
+            
+        
+
+        marker_6a517f345435d97329a377e38731ddb9.bindPopup(popup_66a1f510b507b065ec3c60f56d19b78e)
+        ;
+
+        
+    
+    
+                marker_6a517f345435d97329a377e38731ddb9.setIcon(icon_c28e9667fe0d1962c2c7dec7656abee8);
+            
+    
+            var marker_eb51f2b65e010021eed4304f21bc2207 = L.marker(
+                [-23.627868, -46.7672795],
+                {
+}
+            ).addTo(map_2dd6f9b34b388be50a8a25c495499e06);
+        
+    
+            var icon_4ed063c16e223ab40e0ae9b5b03c17b5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_94472bfca248e65afd7542b53619b35b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8e9c54236bc28715e8f6eca48ced1efb = $(`<div id="html_8e9c54236bc28715e8f6eca48ced1efb" style="width: 100.0%; height: 100.0%;">Ônibus 80168</div>`)[0];
+                popup_94472bfca248e65afd7542b53619b35b.setContent(html_8e9c54236bc28715e8f6eca48ced1efb);
+            
+        
+
+        marker_eb51f2b65e010021eed4304f21bc2207.bindPopup(popup_94472bfca248e65afd7542b53619b35b)
+        ;
+
+        
+    
+    
+                marker_eb51f2b65e010021eed4304f21bc2207.setIcon(icon_4ed063c16e223ab40e0ae9b5b03c17b5);
+            
+</script>
+</html>
